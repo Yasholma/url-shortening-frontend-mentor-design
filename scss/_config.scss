@@ -1,0 +1,73 @@
+$font: "Poppins", sans-serif;
+$primary-color: hsl(180, 66%, 49%);
+$primary-text-color: hsl(257, 27%, 26%);
+$secondary-color: hsl(0, 87%, 67%);
+$gray: hsl(0, 0%, 75%);
+$violet: hsl(257, 7%, 63%);
+$blue: hsl(255, 11%, 22%);
+$dark-blue: hsl(260, 8%, 14%);
+$white: hsl(0, 0, 100%);
+
+$media-md: 48em;
+$media-lg: 64em;
+$media-xl: 90em;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+@mixin transition-ease {
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin media-md {
+  @media screen and (min-width: $media-md) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: $media-lg) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media screen and (min-width: $media-xl) {
+    @content;
+  }
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: $primary-color;
+  padding: 0.8rem 2rem;
+  border-radius: 5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  @include transition-ease;
+
+  &:hover,
+  &:active {
+    background: lighten($color: $primary-color, $amount: 20%);
+    transform: translateY(3px);
+  }
+}

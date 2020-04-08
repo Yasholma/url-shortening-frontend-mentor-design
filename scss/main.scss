@@ -1,0 +1,16 @@
+@import "./config";
+@import "./header";
+@import "./hero";
+@import "./stats";
+@import "./init";
+@import "./footer";
+@import "./responsive";
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 1rem 0;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

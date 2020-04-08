@@ -1,0 +1,175 @@
+main {
+  width: 100%;
+  height: 100%;
+  margin-top: 5rem;
+
+  .hero {
+    background: url("../images/illustration-working.svg");
+    background-position: top 1rem right -8.5rem;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20rem 0 10em;
+
+    &__heading {
+      text-align: center;
+      h1 {
+        font-weight: 700;
+        color: $dark-blue;
+        font-size: 1.8rem;
+        margin: 5rem auto 1rem;
+      }
+
+      p {
+        color: $violet;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+
+      .btn-primary {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &__shorten {
+      background: top -2rem right -2rem url("../images/bg-shorten-mobile.svg")
+          no-repeat,
+        linear-gradient(to bottom, $blue, lighten($blue, 10%));
+      padding: 1.3rem 1rem;
+      border-radius: 0.7rem;
+      position: absolute;
+      bottom: -9.5rem;
+      width: 90%;
+
+      .shorten__form {
+        display: flex;
+        flex-direction: column;
+
+        &.error {
+          input {
+            border: 2px solid $secondary-color;
+            &::placeholder {
+              color: $secondary-color;
+            }
+          }
+
+          span {
+            display: block;
+          }
+        }
+
+        &__input {
+          display: block;
+          padding: 0.7rem 0.8rem;
+          font-size: 0.8rem;
+          width: 100%;
+          border-radius: 0.3rem;
+          border: 0;
+          outline: 0;
+          margin-bottom: 1rem;
+          font-family: $font;
+          @include transition-ease;
+          position: relative;
+
+          &:focus {
+            box-shadow: 0 0 0 2px $primary-color;
+          }
+
+          &__error-text {
+            color: $secondary-color;
+            font-weight: 500;
+            font-size: 0.7rem;
+            font-style: italic;
+            margin: -0.5rem 0 0.9rem;
+            display: none;
+          }
+        }
+
+        &__btn {
+          display: inline-block;
+          background: $primary-color;
+          padding: 0.7rem 2rem;
+          border-radius: 0.3rem;
+          font-size: 0.95rem;
+          font-weight: 700;
+          color: $white;
+          border: 0;
+          cursor: pointer;
+          @include transition-ease;
+
+          &:hover {
+            background: lighten($color: $primary-color, $amount: 20%);
+            transform: scale(0.99);
+          }
+        }
+      }
+
+      &__results {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        bottom: -11rem;
+        width: 100%;
+        height: 100%;
+        right: 0;
+        z-index: 1;
+        visibility: hidden;
+
+        &.open {
+          visibility: visible;
+        }
+      }
+
+      &__result {
+        background: $white;
+        padding: 0.8rem 0;
+        border-radius: 0.3rem;
+        margin: 0 0 1rem;
+
+        h4 {
+          display: block;
+          font-size: 0.88rem;
+          font-weight: 400;
+          box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+          padding: 0rem 0.5rem 0.8rem;
+        }
+
+        a {
+          color: $primary-color;
+          font-size: 0.88rem;
+          padding: 0.8rem 0.5rem;
+          display: block;
+        }
+
+        &__btn {
+          display: inline-block;
+          margin: 0.5rem 0.5rem;
+          background: $primary-color;
+          padding: 0.6rem 2rem;
+          border-radius: 0.3rem;
+          font-size: 0.95rem;
+          font-weight: 500;
+          color: $white !important;
+          text-align: center;
+          border: 0;
+          cursor: pointer;
+          @include transition-ease;
+
+          &.done {
+            background: $blue;
+          }
+
+          &:hover {
+            background: lighten($color: $primary-color, $amount: 20%);
+            transform: scale(0.99);
+          }
+        }
+      }
+    }
+  }
+}
